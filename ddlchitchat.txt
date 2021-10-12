@@ -1,0 +1,49 @@
+CREATE DATABASE chitchat;
+CREATE TABLE user_profile(
+	id_user Int(13) NOT NULL AUTO_INCREMENT,
+	username Varchar(20) NOT NULL,
+	status_user TINYINT(1) NOT NULL,
+	email Varchar(30) NOT NULL,
+	password_user Varchar(12) NOT NULL,
+	profile_pic Int(2) NOT NULL,
+	status_bio Varchar(50) NULL,
+	PRIMARY KEY(id_user)
+);
+
+CREATE TABLE message(
+	id Int(13) NOT NULL AUTO_INCREMENT,
+	id_user1 Int(13) NOT NULL,
+	id_user2 Int(13) NOT NULL,
+	text Text(1000) NOT NULL,
+	time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	status TINYINT(1) NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(id_user1)
+	REFERENCES user_profile(id_user),	
+	FOREIGN KEY(id_user2)
+	REFERENCES user_profile(id_user)
+
+);
+
+CREATE TABLE block_user(
+	id Int(13) NOT NULL AUTO_INCREMENT,
+	id_user Int(13) NOT NULL,
+	id_blocked Int(13) NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(id_user)
+	REFERENCES user_profile(id_user),	
+	FOREIGN KEY(id_blocked)
+	REFERENCES user_profile(id_user)
+	
+);
+
+CREATE TABLE friend_user(
+	id Int(13) NOT NULL AUTO_INCREMENT,
+	id_user Int(13) NOT NULL,
+	id_friend Int(13) NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(id_user)
+	REFERENCES user_profile(id_user),	
+	FOREIGN KEY(id_friend)
+	REFERENCES user_profile(id_user)
+);

@@ -1,0 +1,22 @@
+INSERT INTO `user_profile` (`id_user`, `username`, `status_user`, `email`, `password_user`, `profile_pic`, `status_bio`) VALUES (NULL, 'doby1', '0', 'doby1@gmail.com', '1234', '1', NULL);
+INSERT INTO `user_profile` (`id_user`, `username`, `status_user`, `email`, `password_user`, `profile_pic`, `status_bio`) VALUES (NULL, 'doby2', '0', 'doby2@gmail.com', '5678', '1', NULL);
+INSERT INTO `user_profile` (`id_user`, `username`, `status_user`, `email`, `password_user`, `profile_pic`, `status_bio`) VALUES (NULL, 'doby3', '0', 'doby3@gmail.com', '9101', '1', NULL);
+INSERT INTO `user_profile` (`id_user`, `username`, `status_user`, `email`, `password_user`, `profile_pic`, `status_bio`) VALUES (NULL, 'doby4', '0', 'doby4@gmail.com', '1121', '1', NULL);
+INSERT INTO `user_profile` (`id_user`, `username`, `status_user`, `email`, `password_user`, `profile_pic`, `status_bio`) VALUES (NULL, 'doby5', '0', 'doby5@gmail.com', '3141', '1', NULL);
+
+INSERT INTO `friend_user` (`id_user`, `id_friend`) VALUES ('1', '2');
+INSERT INTO `friend_user` (`id_user`, `id_friend`) VALUES ('3', '4');
+INSERT INTO `friend_user` (`id_user`, `id_friend`) VALUES ('3', '5');
+INSERT INTO `friend_user` (`id_user`, `id_friend`) VALUES ('4', '1');
+INSERT INTO `friend_user` (`id_user`, `id_friend`) VALUES ('5', '2');
+
+INSERT INTO `block_user` (`id_user`, `id_blocked`) VALUES ('1', '5');
+INSERT INTO `block_user` (`id_user`, `id_blocked`) VALUES ('1', '3');
+INSERT INTO `block_user` (`id_user`, `id_blocked`) VALUES ('2', '3');
+INSERT INTO `block_user` (`id_user`, `id_blocked`) VALUES ('2', '4');
+
+INSERT INTO `message` (`id`, `id_user1`, `id_user2`, `text`, `time`, `status`) VALUES (NULL, '1', '2', 'Hello Im here', current_timestamp(), '0');
+INSERT INTO `message` (`id`, `id_user1`, `id_user2`, `text`, `time`, `status`) VALUES (NULL, '3', '4', 'How you you', current_timestamp(), '0');
+INSERT INTO `message` (`id`, `id_user1`, `id_user2`, `text`, `time`, `status`) VALUES (NULL, '1', '4', 'Hey', current_timestamp(), '0');
+INSERT INTO `message` (`id`, `id_user1`, `id_user2`, `text`, `time`, `status`) VALUES (NULL, '5', '2', 'GOOD BYE', current_timestamp(), '0');
+INSERT INTO `message` (`id`, `id_user1`, `id_user2`, `text`, `time`, `status`) VALUES (NULL, '3', '5', 'Where are you?', current_timestamp(), '0');
