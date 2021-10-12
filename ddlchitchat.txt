@@ -26,10 +26,9 @@ CREATE TABLE message(
 );
 
 CREATE TABLE block_user(
-	id Int(13) NOT NULL AUTO_INCREMENT,
 	id_user Int(13) NOT NULL,
 	id_blocked Int(13) NOT NULL,
-	PRIMARY KEY(id),
+	PRIMARY KEY(id_user,id_blocked),
 	FOREIGN KEY(id_user)
 	REFERENCES user_profile(id_user),	
 	FOREIGN KEY(id_blocked)
@@ -38,10 +37,9 @@ CREATE TABLE block_user(
 );
 
 CREATE TABLE friend_user(
-	id Int(13) NOT NULL AUTO_INCREMENT,
 	id_user Int(13) NOT NULL,
 	id_friend Int(13) NOT NULL,
-	PRIMARY KEY(id),
+	PRIMARY KEY(id_user,id_friend),
 	FOREIGN KEY(id_user)
 	REFERENCES user_profile(id_user),	
 	FOREIGN KEY(id_friend)
