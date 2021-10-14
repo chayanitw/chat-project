@@ -26,7 +26,7 @@ body {
 	font-family: 'prompt',sans-serif;
 }
 
-{
+{ /* set */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -40,7 +40,7 @@ body {
   width: 240px;
   background: #5D9C85;
   z-index: 100;
-  transition: all 0.7s ease;
+  transition: all 0.3s ease;
 }
 .sidebar.close{ /* width of side bar */
   width: 85px;
@@ -52,26 +52,18 @@ body {
   align-items: center;
 }
 
-.sidebar .nav-links{
+.sidebar .nav-links{ /* bar */
   height: 100%;
   padding: 30px 0 150px 0;
   overflow: auto;
 }
-.sidebar.close .nav-links{
+.sidebar.close .nav-links{ /* bar */
   overflow: visible;
 }
-.sidebar .nav-links li{
+.sidebar .nav-links li{ /* sub menu bar */
   position: relative;
   list-style: none;
   transition: all 0.4s ease;
-}
-.sidebar .nav-links li .iocn-link{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.sidebar.close .nav-links li .iocn-link{
-  display: block
 }
 .sidebar .nav-links li i{
   height: 50px;
@@ -82,9 +74,6 @@ body {
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-.sidebar .nav-links li.showMenu i.arrow{
-  transform: rotate(-180deg);
 }
 .sidebar.close .nav-links i.arrow{
   display: none;
@@ -109,9 +98,6 @@ body {
   margin-top: -10px;
   background: #0C4A34;
   display: none;
-}
-.sidebar .nav-links li.showMenu .sub-menu{
-  display: block;
 }
 .sidebar .nav-links li .sub-menu a{ /* text sub-menu*/
   color: #fff;
@@ -142,39 +128,17 @@ body {
   pointer-events: auto;
   transition: all 0.4s ease;
 }
-.sidebar .nav-links li .sub-menu .link_name{
-  display: none;
-}
 .sidebar.close .nav-links li .sub-menu .link_name{
-  font-size: 18px;
+  font-size: 20px;
   opacity: 1;
   display: block;
-}
-.sidebar .nav-links li .sub-menu.blank{
-  opacity: 1;
-  pointer-events: auto;
-  padding: 3px 20px 6px 16px;
-  opacity: 0;
-  pointer-events: none;
-}
-.sidebar .nav-links li:hover .sub-menu.blank{
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.home-section{  /* home */ 
-  position: relative;
-  background: #1d1b31;
-  height: 100vh;
-  left: 260px;
-  width: calc(100% - 260px);
 }
 }
 
 </style>
 </head>
 
-
+<!-- Start tab bar -->
 <body>
   <div class="sidebar close">
     <ul class="nav-links">
@@ -200,15 +164,14 @@ body {
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Setting</a></li>
-          <li><a href="#">Edit profile</a></li>
-          <li><a href="#">language</a></li>
-          <li><a href="#">Blocked acount</a></li>
-          <li><a href="#">Delete Acount</a></li>
-          <li><a href="#">Log out</a></li>
+          <li><a  data-toggle="modal" data-target="#myModal">Edit profile</a></li>
+          <li><a  data-toggle="modal" data-target="#myModal">language</a></li>
+          <li><a  data-toggle="modal" data-target="#myModal">Blocked acount</a></li>
+          <li><a  data-toggle="modal" data-target="#myModal">Delete Acount</a></li>
+          <li><a  data-toggle="modal" data-target="#myModal">Log out</a></li>
         </ul>
       </li>
-
-      
+</div>
   <script>
   let arrow = document.querySelectorAll(".arrow");
   for (var i = 0; i < arrow.length; i++) {
@@ -224,6 +187,33 @@ body {
     sidebar.classList.toggle("close");
   });
   </script>
+  <!-- end tab bar-->
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Modal body..
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <script src="js/bootstrap.min.js"></script>    
 
 </body>
