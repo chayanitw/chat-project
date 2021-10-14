@@ -105,7 +105,7 @@ body {
 				<h4 class="modal-title">Login</h4>	
 			</div>
 			<div class="modal-body">
-				<form action="check-login-user.php" method="post">
+				<form action="chat-check-login-user.php" method="post">
 					<div class="form-group">
 						<label for="login-id">Email</label>
 						<input type="text" class="form-control" name="email" placeholder="Email" required="required">		

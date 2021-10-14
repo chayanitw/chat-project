@@ -14,7 +14,7 @@ if(!$objResult)
 }
 else
 {
-    header("location:Eng_setting.php"); /*edit*add main.php */
+    header("location:chat-Eng-setting.php"); /*edit*add main.php */
 }
 mysqli_close($con);
 ?>
